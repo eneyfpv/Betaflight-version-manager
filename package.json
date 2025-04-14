@@ -1,0 +1,39 @@
+{
+  "name": "betaflight-version-manager",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.6.1",
+    "@tanstack/react-query": "^5.72.2",
+    "@vercel/analytics": "^1.5.0",
+    "antd": "^5.24.6",
+    "dayjs": "^1.11.13",
+    "diff": "^7.0.0",
+    "firebase": "^10.0.0",
+    "firebaseui": "^6.1.0",
+    "i": "^0.3.7",
+    "npm": "^11.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.17"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vite": "^6.2.0"
+  }
+}
