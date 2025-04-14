@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 
 import firebase from 'firebase/compat/app'
-import { UserOutlined } from '@ant-design/icons'
+import { UserOutlined, GithubOutlined } from '@ant-design/icons'
 import { Button, Modal } from 'antd'
 import dayjs from 'dayjs'
 import { diffLines } from 'diff'
@@ -106,19 +106,25 @@ const App = () => {
       <S.Header>
         <div>Betaflight version manager</div>
 
-        <S.User
-          signedIn={!!user.email}
-          onClick={() => (!user.email ? setShowAuthModal(true) : setShowAuthActions(!showAuthActions))}
-        >
-          <UserOutlined />
+        <S.RightMenuWrapper>
+          <S.GithubLink href='https://github.com/eneyfpv/Betaflight-version-manager' target='_blank'>
+            <GithubOutlined /> View on Github
+          </S.GithubLink>
 
-          {showAuthActions && (
-            <S.UserActions>
-              <S.UserActionsItem>{user.email}</S.UserActionsItem>
-              <S.UserActionsItem onClick={() => firebase.auth().signOut()}>Logout</S.UserActionsItem>
-            </S.UserActions>
-          )}
-        </S.User>
+          <S.User
+            signedIn={!!user.email}
+            onClick={() => (!user.email ? setShowAuthModal(true) : setShowAuthActions(!showAuthActions))}
+          >
+            <UserOutlined />
+
+            {showAuthActions && (
+              <S.UserActions>
+                <S.UserActionsItem>{user.email}</S.UserActionsItem>
+                <S.UserActionsItem onClick={() => firebase.auth().signOut()}>Logout</S.UserActionsItem>
+              </S.UserActions>
+            )}
+          </S.User>
+        </S.RightMenuWrapper>
 
         <Modal open={showAuthModal} onOk={() => setShowAuthModal(false)} onCancel={() => setShowAuthModal(false)}>
           <Auth onSignIn={() => setShowAuthModal(false)} />
@@ -185,7 +191,7 @@ const App = () => {
                   {selectedVersion.data && (
                     <>
                       <Button ghost onClick={() => setShowDiff(!showDiff)}>
-                        Show diff
+                        {showDiff ? 'Hide diff' : 'Show diff'}
                       </Button>
                       <Button ghost onClick={() => navigator.clipboard.writeText(selectedVersion.data)}>
                         Copy

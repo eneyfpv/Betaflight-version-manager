@@ -17,6 +17,17 @@ export const Header = styled.div`
   height: 40px;
 `
 
+export const RightMenuWrapper = styled.div`
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+`
+
+export const GithubLink = styled.a`
+  color: #fff;
+  font-size: 12px;
+`
+
 export const User = styled.div`
   height: 25px;
   width: 25px;
